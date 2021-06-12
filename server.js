@@ -3,6 +3,7 @@ var fs = require("fs");
 var path = require("path");
 var cors = require("cors");
 const bodyParser = require("body-parser");
+const PORT = process.env.PORT || 3000;
 
 var app = express();
 const http = require("http").Server(app);
@@ -79,6 +80,6 @@ app.post("/", (req, res) => {
 	else res.sendFile(path.resolve(__dirname + "/static/Game/game.html"));
 });
 
-http.listen(3000, function () {
+http.listen(PORT, function () {
 	console.log("START ON 3000");
 });
