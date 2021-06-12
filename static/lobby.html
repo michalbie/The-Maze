@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>The Maze</title>
+	</head>
+	<body>
+		<div style="display: flex; align-items: center; justify-content: center; flex-direction: column">
+			<form id="name-form" action="/" method="POST">
+				<input type="text" name="playerName" id="playerName" />
+				<input type="submit" value="Join" />
+			</form>
+			<div style="font-weight: bold">
+				<div style="background-color: red; margin-top: 20px">Turn left</div>
+				<div style="background-color: green">Go forward</div>
+				<div style="background-color: blue">Turn right</div>
+				<div style="background-color: pink">Modifier: use turn hint on 2nd turn from now</div>
+				<div style="background-color: purple">Modifier: use turn hint on 3rd turn from now</div>
+			</div>
+		</div>
+
+		<script>
+			document.getElementById("name-form").onsubmit = async (e) => {
+				e.preventDefault();
+
+				console.log(document.getElementById("playerName").value);
+				const name = document.getElementById("playerName").value;
+				document.cookie = "nickname=" + name;
+				document.getElementById("name-form").submit();
+			};
+		</script>
+	</body>
+</html>
