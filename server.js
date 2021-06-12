@@ -16,7 +16,6 @@ const io = require("socket.io")(http, {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const PORT = process.env.PORT || 3000;
 var Player = require("./Player.js");
 
 //app.use(express.static(path.join(__dirname, "/../dist")));
