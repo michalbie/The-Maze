@@ -60924,7 +60924,7 @@ class Main {
 			let intersects1 = this.raycaster1.intersectObjects(objects, true);
 			let intersects2 = this.raycaster2.intersectObjects(objects, true);
 
-			if (intersects1.length > 0) {
+			if (intersects1.length > 0 && intersects1[0].distance < 100) {
 				this.player.canMove = false;
 				this.player2.canMove = false;
 
@@ -60937,7 +60937,7 @@ class Main {
 				this.whoWon = "player2";
 			}
 
-			if (intersects2.length > 0) {
+			if (intersects2.length > 0 && intersects2[0].distance < 100) {
 				this.player.canMove = false;
 				this.player2.canMove = false;
 
