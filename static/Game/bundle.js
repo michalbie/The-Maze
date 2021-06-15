@@ -61264,7 +61264,7 @@ class ServerConnector {
 		this.main = main;
 		this.playerName = document.cookie.split("=")[1];
 		console.log(this.playerName);
-		this.socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_0__.io)("http://localhost:3000", { query: "nickname=" + this.playerName });
+		this.socket = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_0__.io)("", { query: "nickname=" + this.playerName });
 		this.enemyPosX = null;
 		this.enemyPosZ = null;
 
